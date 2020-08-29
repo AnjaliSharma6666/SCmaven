@@ -31,7 +31,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>clean</goal>
+              <goal>java</goal>
             </goals>
           </execution>
         </executions>
