@@ -33,18 +33,18 @@ public class SilkCentralMaven {
                 throw new RuntimeException("Failed : HTTP Error code : "
                         + conn.getResponseCode());
             }
-            System.out.println(conn.getResponseMessage());
             
-            try(BufferedReader br = new BufferedReader(
-            		  new InputStreamReader(conn.getInputStream(), "utf-8"))) {
+            else {
+            	BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8")); 
             		    StringBuilder response = new StringBuilder();
             		    String responseLine = null;
             		    while ((responseLine = br.readLine()) != null) {
             		        response.append(responseLine.trim());
             		    }
             		    System.out.println(response.toString());
-            		}
+            		
             conn.disconnect();
+        }
 
         } catch (Exception e) {
             System.out.println("Exception:- " + e);
