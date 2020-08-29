@@ -8,7 +8,7 @@ import java.net.URL;
 public class SilkCentralMaven {
 	
 
-    public void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
+    public static void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
         try {
         	URL url = new URL( SC_Host + "/Services1.0/execution/executionplanruns?nodeId=" + SC_ExecutionNodeId);//your url i.e fetch data from .
         	
