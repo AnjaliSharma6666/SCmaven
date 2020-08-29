@@ -31,12 +31,15 @@
         <executions>
           <execution>
             <goals>
-              <goal>exec</goal>
+              <goal>clean</goal>
             </goals>
           </execution>
         </executions>
         <configuration>
           <executable>maven</executable>
+          <environmentVariables>
+            <LANG>en_US</LANG>
+          </environmentVariables>
         </configuration>
       </plugin>
     </plugins>
