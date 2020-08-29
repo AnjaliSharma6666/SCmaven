@@ -27,6 +27,11 @@
             <version>2.4.5</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+    <groupId>org.eclipse.m2e</groupId>
+    <artifactId>lifecycle-mapping</artifactId>
+    <version>1.0.0</version>
+</dependency>
   </dependencies>
   
   <build>
