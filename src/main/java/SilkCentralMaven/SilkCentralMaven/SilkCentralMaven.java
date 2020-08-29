@@ -22,13 +22,13 @@ public class SilkCentralMaven {
                 throw new RuntimeException("Failed : HTTP Error code : "
                         + conn.getResponseCode());
             }
+            System.out.println(conn.getResponseMessage());
             
-            InputStreamReader in = new InputStreamReader(conn.getInputStream());
-            BufferedReader br = new BufferedReader(in);
-            String output;
-            while ((output = br.readLine()) != null) {
-                System.out.println(output);
-            }
+			/*
+			 * InputStreamReader in = new InputStreamReader(conn.getInputStream());
+			 * BufferedReader br = new BufferedReader(in); String output; while ((output =
+			 * br.readLine()) != null) { System.out.println(output); }
+			 */
             conn.disconnect();
 
         } catch (Exception e) {
