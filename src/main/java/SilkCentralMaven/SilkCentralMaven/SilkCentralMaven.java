@@ -7,20 +7,10 @@ import java.net.URL;
 
 public class SilkCentralMaven {
 	
-	int SCExecutionNodeId;
-	String SCHost;
-	String SCToken;
-	
-	public SilkCentralMaven(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
-		this.SCExecutionNodeId = SC_ExecutionNodeId;
-		this.SCHost = SC_Host;
-		this.SCToken = SC_Token;	
-	}
-	
-	 public static void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
+
+    public void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
         try {
-        	SilkCentralMaven SCObj = new SilkCentralMaven(SC_ExecutionNodeId, SC_Token, SC_Token);
-        	URL url = new URL( SCObj.SCHost + "/Services1.0/execution/executionplanruns?nodeId=" + SC_ExecutionNodeId);
+        	URL url = new URL( SC_Host + "/Services1.0/execution/executionplanruns?nodeId=" + SC_ExecutionNodeId);//your url i.e fetch data from .
         	
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
@@ -28,10 +18,10 @@ public class SilkCentralMaven {
             conn.setRequestProperty("SC-SESSION-ID", SC_Token);
             conn.setRequestProperty("Content-Type", "application/json");
             
-			
-			  if (conn.getResponseCode() != 200) { throw new
-			  RuntimeException("Failed : HTTP Error code : " + conn.getResponseCode()); }
-			 
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP Error code : "
+                        + conn.getResponseCode());
+            }
             
             InputStreamReader in = new InputStreamReader(conn.getInputStream());
             BufferedReader br = new BufferedReader(in);
@@ -42,7 +32,7 @@ public class SilkCentralMaven {
             conn.disconnect();
 
         } catch (Exception e) {
-            System.out.println("Exception:- " + e);
+            System.out.println("Exception in NetClientGet:- " + e);
         }
     }
 }
