@@ -10,14 +10,14 @@ public class SilkCentralMaven {
 
 	
 	public static void main(String[] args) {
-		int SC_ExecutionNodeId = Integer.parseInt(args[0]);
-		String SC_Host = args[1];
-		 String SC_Token = args[2];
-		SilkCentralMaven.SCRunExecution(SC_ExecutionNodeId,SC_Host, SC_Token);
+		
+		SilkCentralMaven.SCRunExecution(45, "http://desktop-5ivatg8:19120", "327981e9-d9f0-4e00-9a78-1bcb86078ec2");
 
 			}
 
-    public static void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
+
+
+	public static void SCRunExecution(int SC_ExecutionNodeId, String SC_Host, String SC_Token) {
         try {
         	URL url = new URL( SC_Host + "/Services1.0/execution/executionplanruns?nodeId=" + SC_ExecutionNodeId);//your url i.e fetch data from .
         	
